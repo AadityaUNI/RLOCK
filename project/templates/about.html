@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Search Providers
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h1 class="cme text-center poppins-semibold"> Rlocked: A streaming service info-provider</h1>
+
+        <p class="h3 thisisit poppins-medium ">We, at Rlocked, aspire to provide our users a service that can stop them from being interrupted in their entertainment streams by providing necessary info as to which countries are supporting which shows, movies and your favourite series!</p>
+
+    </div>
+    
+    <hr>
+    <div class="container">
+        <form class="form" data-bs-theme="dark" action="/feedback" method="post">
+            <label for="selectform" class="form-label cme mt-2 mb-2">Choose a response</label><br>
+            <select type="form-select form-select-lg mt-2 mb-2" id="selectform" data-bs-theme="dark" name="selectvalue">
+                <option value="feedback">
+                    Feedback
+                </option>
+                <option value="improvemnt">
+                    Improvement
+                </option>
+                <option value="bug">
+                    Report bug
+                </option>
+            </select><br>
+            <label for="text" class="form-label cme mb-2 mt-2">Enter text here:</label><br>
+            <textarea class="form-control mb-2 mt-2" data-bs-theme="dark" placeholder="Enter text here" id="text" name="text">
+            </textarea>
+            <button type="submit" class="btn btn-outline-dark btn-lg cme mt-2">Submit</button>
+        </form>
+    </div>
+    
+{% endblock %}

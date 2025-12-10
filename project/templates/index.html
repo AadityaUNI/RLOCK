@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home: Rlocked
+{% endblock %}
+
+{% block main %}
+
+<script>
+	const url = 'https://imdb8.p.rapidapi.com/title/v2/get-popular?first=12&country=US&language=en-US';
+
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': '16fedabe89msh442984c3f406f92p19ea31jsn3308deb49c38',
+		'x-rapidapi-host': 'imdb8.p.rapidapi.com'
+	}
+};
+
+async function func() {
+    try {
+        // Fetch the initial data
+        const response = await fetch(url, options);
+        const result = await response.json();
+        console.log(result);
+        let list = result.data.movies.edges;
+        var count = 0;
+        var rcount = 0;
+        for (let i of list){
+            var image = i.node.primaryImage.url;
+            var title = i.node.titleText.text;
+            var id = i.node.id
+            var link = "/search?q=" + id
+            if (count % 4 == 0){
+					rcount += 1;
+					document.querySelector('#colm').innerHTML += `<div class = 'row' id = 'a${rcount}'><div class = 'col col-3 mb-2 pb-3'><a class='link-offset-2 link-underline link-underline-opacity-0' href=${link}><div class='card left-align-card'><img class='card-img-top rounded' src= ${image} alt = '...'><div class = 'card-body'><h5 class='card-title'>${title}</h5></div></div></a></div></div>`;
+
+				}
+				else{
+					document.querySelector(`#a${rcount}`).innerHTML += `<div class = 'col col-3 mb-2 pb-3'><a class='link-offset-2 link-underline link-underline-opacity-0' href=${link}><div class='card left-align-card'><img class='card-img-top rounded' src= ${image} alt = '...'><div class = 'card-body'><h5 class='card-title'>${title}</h5></div></div></a></div>`;
+				}
+			count += 1;
+			}
+        }
+    catch (error) {
+        console.error(error);
+    }
+}
+func();
+</script>
+
+<div class="movies container" width="136" id='colm'>
+
+</div>
+
+
+{% endblock %}

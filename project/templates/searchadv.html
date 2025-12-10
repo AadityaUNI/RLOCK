@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+
+    <div class='container'>
+        <form class='form' action='/searchadv' method='POST'>
+            <input class='form-control my-5' data-bs-theme='dark' placeholder='Title' name='title'>
+            <input class='form-control my-5' data-bs-theme='dark' placeholder='Country (leave blank for auto-detect)' name='country'>
+            <button class='btn btn-outline-dark cme px-3 py-2' type='submit'>Search</button>
+        </form>
+    </div>
+
+{% endblock %}

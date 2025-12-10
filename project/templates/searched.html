@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Search Results
+{% endblock %}
+
+{% block main %}
+
+
+<div class="container containing-card">
+    <div class='container shrink'>
+        <div class='row justify-content-center'>
+            <div class='col'>
+                <div class='card search'>
+                    <img class='card-img-top rounded' src={{img2}} alt = '...'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>{{title}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <div class="container thisisit text-lg">
+        ALL SERVICES:
+        
+        <table class='table striped-dark my-5 grow' width="250px" data-bs-theme='dark'>
+            <thead>
+                <th scope='col'>Service</th>
+                <th scope='col'>Type</th>
+                <th scope='col'>Price</th>
+            </thead>
+            <tbody>
+                {% for card in cards %}
+                    <tr><td>{{ card['service'] }}</td><td>{{ card['type'] }}</td> {% if card['type'] == "rent" or card['type'] == "buy" %}<td> <a class='link-offset-2 link-underline link-underline-opacity-0' href="{{ card['link'] }}"> {{ card['price'] }}</a> </td> {% else %}<td> <a class='link-offset-2 link-underline link-underline-opacity-0' href="{{ card['link'] }}"> Subscribe</a> </td> {% endif %}</tr>
+                {% endfor %}
+            </tbody>
+        </table>    
+    </div>
+    
+</div>
+
+
+{% endblock %}

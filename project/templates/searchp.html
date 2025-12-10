@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Search Providers
+{% endblock %}
+
+{% block main %}
+
+<div class='container'>
+    <form class='form' action='/searchp' method='POST'>
+        <input class='form-control mb-2 mt-5' data-bs-theme='dark' placeholder='Title' name='title'>
+        <label for="selectform" class="form-label cme mb-2">Choose a Type</label><br>
+            <select type="form-select form-select-lg mb-2" id="selectform" data-bs-theme="dark" name="TYPE">
+                <option value="buy">
+                    Buy
+                </option>
+                <option value="rent">
+                    Rent
+                </option>
+                <option value="subscription">
+                    Subscription
+                </option>
+                <option value="all" selected>
+                    All
+                </option>
+            </select><br>
+        <button class='btn btn-outline-dark cme px-3 py-2 mt-2' type='submit'>Search</button>
+    </form>
+</div>
+
+
+{% endblock %}
