@@ -45,12 +45,7 @@ pip install flask flask-session python-Levenshtein requests
    pip install flask flask-session python-Levenshtein requests
    ```
 
-3. **Navigate to the project directory:**
-   ```bash
-   cd project
-   ```
-
-4. **Run the application:**
+3. **Run the application:**
    ```bash
    flask run
    ```
@@ -60,7 +55,7 @@ pip install flask flask-session python-Levenshtein requests
    python app.py
    ```
 
-5. **Open your browser** and navigate to: 
+4. **Open your browser** and navigate to: 
    ```
    http://127.0.0.1:5000
    ```
