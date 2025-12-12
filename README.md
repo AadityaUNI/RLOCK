@@ -36,7 +36,7 @@ pip install flask flask-session python-Levenshtein requests
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/AadityaUNI/RLOCK. git
+   git clone https://github.com/AadityaUNI/RLOCK.git
    cd RLOCK
    ```
 
