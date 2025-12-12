@@ -1,3 +1,110 @@
-# YOUR PROJECT TITLE
-#### Video Demo:  https://youtu.be/DnR1-9xrrYM
-#### Description: My project, named Rlocked, is a web application designed using Python, Javascript, HTML, and css, and its main purpose is to provide information about streaming availability of shows, movies and series in different countries. I got this idea for a website that helps us find where to watch any title when we were assigned with imdb queries in the SQL lecture problem set. But things got rough after I completed finance, because I had no idea on how to use any api or where to get them even. Furthermore, I was mostly unfamiliar with Bootstrap's and CSS's components and had to watch about 5 hours worth of tutorials to get myself on track. I had to pick up several new things and that was my main motivation with this project. So firstly, we have the static dir with the stylesheet styles.css with all the css that I have applied on my web app including flexbox as well, next we move on to the templates directory; layout.html is the standard layout for each page with a navbar set up at the top of the page, and a feedback footer at the bottom. Index.html is the home page that uses javascript to fetch the month's popular titles from imdb api as cards which redirect you to search.html which has a similar structure as the other search results with the movie card on the left and the services table on the right. I was stuck on this index page for over two weeks because I had no clue what I was supposed to be doing with the design and the api and kept trying to do it myself over and over until I had to give in to an online tutorial. I was torn between a blue-black schemed website and this imdb-style design but the blue type didn't really look that good so I went with this ( my brain could only think of this gold-black design whenever I thought of cinema). Although, once I got the hang of setting up the hood for the program and all its prerequisites, it took me only two weeks to finish the rest of the project since I had the blueprint design figured out. Moving on, on this endpoint I have also defined the flask session to store the user's country code so I could make the auto-detect work on the other features. Secondly, we have one of the two main features - Regional search (searchadv.html serves as the form page for getting the user's input for the title and optionally, country). After submitting this form, the user is redirected to searched.html which has the desired title's available services at the desired region with an identical page presentation to the search.html (create a card on the left hand side and add the movie's title, overview and poster with a table having each service as a list of dictionaries). However, the search providers endpoint is different in functionality. Searchp.html contains the form for a title and a type input (eg. rent, buy etc.) and the redirected searchedp.html will return all the countries (in codes) that provide streaming services for that particular title and type in a list of drop-downs that each have their own services table containing their list of services. This was also a challenging part of my project because until this point I was making single tables with multiple rows but now I would have to make a list of multiple tables and each of them having multiple rows; before the current design, I was trying to fit all the info into a single list containing dictionaries that had their own children lists with dictionaries (literally) and then I realized that I was overcomplicating it and decided to go with one list and one dictionary instead ( one for the countries and one for the streaming services for that country). Finally, we have the about.html with the description of the web app and also a form for feedback from the users (my friends mostly) which redirects to the thanks.html for displaying gratitude for filling the form! Also the error.html is displayed in case of any error similar to the apology page in finance. That was my cs50x project, and my first project out of school! It wasn't the best thing that you've probably seen but I will improve and hopefully make something better next!
+# RLOCK
+
+A streaming service info-provider web application built with Flask.  RLOCK helps you discover which streaming platforms offer your favorite movies and TV shows, and in which countries they're available! 
+
+![Demo](https://github.com/user-attachments/assets/9d55077a-8dab-4884-864b-773802346214)
+
+## Features
+
+- **Auto-detect Location** - Automatically detects your country to show relevant streaming options
+- **Search by Title** - Find streaming availability for any movie or TV show
+- **Regional Search** - Search for content availability in specific countries
+- **Multiple Streaming Types** - View subscription, rental, and purchase options
+- **Direct Links** - Get direct links to watch content on streaming platforms
+- **Feedback System** - Submit feedback and improvement suggestions
+
+## Prerequisites
+
+Make sure you have **Python 3.x** installed on your system. 
+
+### Required Python Packages
+
+```bash
+pip install flask
+pip install flask-session
+pip install python-Levenshtein
+pip install requests
+```
+
+Or install all dependencies at once:
+
+```bash
+pip install flask flask-session python-Levenshtein requests
+```
+
+## Getting Started
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/AadityaUNI/RLOCK. git
+   cd RLOCK
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install flask flask-session python-Levenshtein requests
+   ```
+
+3. **Navigate to the project directory:**
+   ```bash
+   cd project
+   ```
+
+4. **Run the application:**
+   ```bash
+   flask run
+   ```
+   
+   Or alternatively: 
+   ```bash
+   python app.py
+   ```
+
+5. **Open your browser** and navigate to: 
+   ```
+   http://127.0.0.1:5000
+   ```
+
+## Project Structure
+
+```
+RLOCK/
+├── README.md
+└── project/
+    ├── app.py              # Main Flask application
+    ├── Feedback.txt        # User feedback storage
+    ├── static/
+    │   └── styles.css      # Custom CSS styles
+    ├── templates/
+    │   ├── layout.html     # Base template
+    │   ├── index.html      # Home page
+    │   ├── about.html      # About & feedback page
+    │   ├── search.html     # Search results
+    │   ├── searchadv.html  # Advanced search form
+    │   ├── searched.html   # Advanced search results
+    │   ├── searchp.html    # Regional search form
+    │   ├── searchedp.html  # Regional search results
+    │   ├── error.html      # Error page
+    │   └── thanks.html     # Feedback confirmation
+    └── flask_session/      # Session storage
+```
+
+## Dependencies
+
+| Package | Description |
+|---------|-------------|
+| `flask` | Web framework |
+| `flask-session` | Server-side session management |
+| `python-Levenshtein` | Fuzzy string matching for title search |
+| `requests` | HTTP library for API calls |
+
+## APIs Used
+
+- **IMDB API** - For movie/show search and metadata
+- **Streaming Availability API** - For streaming platform information
+
+## Requirements
+
+- **Python 3.x**
+- **pip** (Python package manager)
+- Internet connection (for API calls)
