@@ -57,30 +57,6 @@ pip install flask flask-session python-Levenshtein requests
    http://127.0.0.1:5000
    ```
 
-## Project Structure
-
-```
-RLOCK/
-├── README.md
-└── project/
-    ├── app.py              # Main Flask application
-    ├── Feedback.txt        # User feedback storage
-    ├── static/
-    │   └── styles.css      # Custom CSS styles
-    ├── templates/
-    │   ├── layout.html     # Base template
-    │   ├── index.html      # Home page
-    │   ├── about.html      # About & feedback page
-    │   ├── search.html     # Search results
-    │   ├── searchadv.html  # Advanced search form
-    │   ├── searched.html   # Advanced search results
-    │   ├── searchp.html    # Regional search form
-    │   ├── searchedp.html  # Regional search results
-    │   ├── error.html      # Error page
-    │   └── thanks.html     # Feedback confirmation
-    └── flask_session/      # Session storage
-```
-
 ## Dependencies
 
 | Package | Description |
