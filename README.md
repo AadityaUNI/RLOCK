@@ -3,6 +3,8 @@
 A streaming service info-provider web application built with Flask.  RLOCK helps you discover which streaming platforms offer your favorite movies and TV shows, and in which countries they're available! 
 
 ![Demo](https://github.com/user-attachments/assets/9d55077a-8dab-4884-864b-773802346214)
+<img width="1910" height="919" alt="image" src="https://github.com/user-attachments/assets/64959fde-bfcd-4aa1-84cd-11553b639105" />
+
 
 ## Features
 
@@ -45,22 +47,12 @@ pip install flask flask-session python-Levenshtein requests
    pip install flask flask-session python-Levenshtein requests
    ```
 
-3. **Navigate to the project directory:**
-   ```bash
-   cd project
-   ```
-
-4. **Run the application:**
+3. **Run the application:**
    ```bash
    flask run
    ```
    
-   Or alternatively: 
-   ```bash
-   python app.py
-   ```
-
-5. **Open your browser** and navigate to: 
+4. **Open your browser** and navigate to: 
    ```
    http://127.0.0.1:5000
    ```
